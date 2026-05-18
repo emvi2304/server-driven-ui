@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "rootDir": "./",
+    "outDir": ".build",
+    "types": ["node"],
+    "jsx": "react-jsx",
+    "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": true,
+
+ }
+}

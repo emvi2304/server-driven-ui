@@ -1,0 +1,1 @@
+docker run -it --name express-container -v /path:/project -w /project -p 3000:3000 node:24-alpine
