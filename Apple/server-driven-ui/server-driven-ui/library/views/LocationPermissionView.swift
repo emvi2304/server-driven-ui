@@ -42,7 +42,7 @@ struct LocationPermissionView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             case .notDetermined:        // Authorization not determined yet.
-                Text("Finding your location...")
+                Text("Laddar...")
                 ProgressView()
             default:
                 VStack{
@@ -50,7 +50,7 @@ struct LocationPermissionView: View {
                 }
             }
         }
-        .onChange(of: locationManager.location){
+        .onChange(of: locationManager.authorizationStatus){
             Task{
                 if(locationManager.authorizationStatus == .authorizedWhenInUse){
                     await viewModel.getWeather(access: "true", lon: locationManager.location?.coordinate.longitude.description ?? "Unknown", lat: locationManager.location?.coordinate.latitude.description ?? "Unknown")
