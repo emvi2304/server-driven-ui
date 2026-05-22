@@ -59,6 +59,9 @@ struct ContentView: View {
         .task(id: page) {
             await viewModel.navigation(to: page)
         }
+        .refreshable {
+            await viewModel.navigation(to: page)
+        }
         .background(Color(.systemGroupedBackground))
     }
 }
