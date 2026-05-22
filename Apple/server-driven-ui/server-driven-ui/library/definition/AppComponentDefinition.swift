@@ -51,6 +51,7 @@ enum Components: String, Codable{
     case RemoveAccountView
     case AddAccountView
     case LocationPermissionView
+    case NoAccessWeatherView
     case WeatherView
 }
 
