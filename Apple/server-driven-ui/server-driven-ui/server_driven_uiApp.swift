@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct server_driven_uiApp: App {
+    @State private var viewModel = LayoutViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                ContentView()
+            }
+            .environment(viewModel)
         }
     }
 }
