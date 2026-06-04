@@ -24,17 +24,15 @@ struct NavigationBarView: View {
     
     // https://developer.apple.com/documentation/SwiftUI/NavigationLink#Link-to-a-destination-view
     var body: some View {
-        NavigationStack {
-            List{
-                Section(header: Text(sectionTitle ?? "")){
-                    ForEach(pages){page in
-                        NavigationLink(page.pageName){
-                            ContentView(page: page.destination)
-                        }
+        List{
+            Section(header: Text(sectionTitle ?? "")){
+                ForEach(pages){page in
+                    NavigationLink(page.pageName){
+                        ContentView(page: page.destination)
                     }
                 }
-            }.navigationTitle(title ?? "")
+            }
         }
+        .navigationTitle(title ?? "")
     }
- 
 }
