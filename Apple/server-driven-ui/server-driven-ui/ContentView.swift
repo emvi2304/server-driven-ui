@@ -40,8 +40,8 @@ func generateView(for component: AppComponentDefinition) -> some View {
 
 
 struct ContentView: View {
-    // Egen LayoutViewModel per view, så navigation stack ska fungera
-    @State private var viewModel = LayoutViewModel()
+    @Environment(LayoutViewModel.self)
+    private var viewModel: LayoutViewModel
     
     var page: String = "/start"
 
@@ -68,8 +68,8 @@ struct ContentView: View {
 
 #Preview {
     @Previewable @State var viewModel = LayoutViewModel()
-    ContentView()
-        .environment(viewModel)
+    NavigationStack{
+        ContentView()
+    }
+    .environment(viewModel)
 }
-
-
